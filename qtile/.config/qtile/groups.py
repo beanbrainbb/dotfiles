@@ -11,9 +11,9 @@ def init_groups():
             Group("H4XX", init=True, persist=True, label="#"),
             Group("$RIPTZ", init=True, persist=True, label="$"),
             Group(".conf", init=True, persist=True, label="%"),
-            Group(":D", init=True, persist=True, label="🖻🖻^"),
+            Group("X_x", init=True, persist=True, label="🖻🖻^"),
             Group("browse", init=True, persist=True, label="𑙩𑙩𑙩𑙩&"),
-            Group('media', init=True, persist=True, label='*'),
+            Group(':D', init=True, persist=True, label='*'),
             Group('/3/', init=True, persist=True, label='9'),
             Group('/gd/', init=True, persist=True, label='0'),
             ScratchPad('scratch', [
