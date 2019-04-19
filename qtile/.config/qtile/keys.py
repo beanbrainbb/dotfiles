@@ -78,13 +78,19 @@ def init_const_keys():
         # Scrotter
         Key([mod, shift], 'a', lazy.spawn([
         	'scrot', '-q', '100',
-        	HOME + 'Screenshots/' + DATETIME + '_qtile.png',
+        	'%Y%m%d.%H%M:%S_qtile.png',
+            '-e', 'mv $f ~/Screenshots/',
         	])),
         Key([mod, shift], 'u', lazy.spawn([
-        	'scrot', '-ubq', '100', HOME + 'Screenshots/' + DATETIME + '_window.png',
+        	'scrot', '-ubq', '100',
+            '%Y%m%d.%H%M:%S_window.png',
+            '-e', 'mv $f ~/Screenshots',
         	])),
+        # TODO: grab mouse for this
         Key([mod, shift], 's', lazy.spawn([
-        	'scrot', '-sq', '100', HOME + 'Screenshots/' + DATETIME + '_selection.png',
+        	'scrot', '-sq', '100',
+            '%Y%m%d.%H%M:%S_selection.png',
+            '-e', 'mv $f ~/Screenshots',
         	])),
 
         # Window Ops

@@ -101,7 +101,8 @@ def main(qtile):
 
 
 # Needed for some Java apps
-wmname = "LG3D"
+# wmname = "LG3D"
+wmname = "Qtile"
 
 @hook.subscribe.startup_once
 def autostart():
