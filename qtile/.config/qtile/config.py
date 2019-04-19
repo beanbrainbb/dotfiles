@@ -81,9 +81,7 @@ groups = init_groups()
 layouts = init_layouts(layout_defaults)
 # dgroups_app_rules = init_rules()
 screens = init_screens()
-print('inititalizing binds...')
 inputs = init_binds()
-print('...binds initialized.')
 keys = inputs.keys
 mouse = inputs.mouse
 # widget_defaults = init_widget_defaults()
