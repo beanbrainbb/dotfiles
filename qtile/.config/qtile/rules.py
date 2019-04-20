@@ -1,6 +1,7 @@
 from libqtile import layout
+from theming import theme
 
-def init_floating_layout(layout_defaults):
+def init_floating_layout():
 	return layout.Floating(float_rules=[
 	    {'wmclass': 'confirm'},
 	    {'wmclass': 'dialog'},
@@ -17,4 +18,4 @@ def init_floating_layout(layout_defaults):
 	    {'wname': 'pinentry'},  # GPG key password entry
 	    {'wmclass': 'ssh-askpass'},  # ssh-askpass
 	    {'wmclass': 'Xephyr'},  #window manager testing w/ Xephyr
-	], **layout_defaults)
+	], **theme.layouts)

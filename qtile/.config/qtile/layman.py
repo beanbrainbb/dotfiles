@@ -64,8 +64,6 @@ class layMan:
         self._keys = self._const_keys
         # if the current layout has custom keys, set them:
         if getattr(self._current_layout, 'name', None) in self._layout_keys:
-            print('applying layout... ', self._current_layout.name)
-            print('agregando: ', self._layout_keys[self._current_layout.name])
             self._keys.extend(self._layout_keys[self._current_layout.name])
         else:
             self._keys.extend(self._layout_keys['ambiguous'])

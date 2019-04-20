@@ -5,7 +5,7 @@ import logging
 from libqtile.config import Key, Drag, Click
 from libqtile.command import lazy
 
-from groups import init_groups
+from layouts_groups import init_groups
 from layman import layMan
 
 import os, datetime
@@ -146,6 +146,47 @@ def init_layout_specials():
     return {
         'ambiguous': [
          ],
+         'stack': [
+            Key([mod], "j", lazy.layout.down()),
+            Key([mod], "k", lazy.layout.up()),
+            Key([mod], 'h', lazy.layout.left()),
+            Key([mod], 'l', lazy.layout.right()),
+
+            # shuffle windows
+            Key([mod, shift], 'k', lazy.layout.shuffle_up()),
+            Key([mod, shift], 'j', lazy.layout.shuffle_down()),
+            Key([mod, shift], 'h', lazy.layout.client_to_previous()),
+            Key([mod, shift], 'l', lazy.layout.client_to_next()),
+            # TODO: Man, wouldn't it be nice to have chorded keys so I could,
+            # for example, call lazy.layout.client_to_stack(n) with a leader
+            # key, and have the next key be argument *n*? (if key is an
+            # integer).
+
+            # manage stacks
+            Key([mod], 'period', lazy.layout.add()),
+            Key([mod], 'comma', lazy.layout.delete()),
+
+            Key([mod], 'Return', lazy.layout.rotate()),
+            Key([mod], "backslash", lazy.layout.toggle_split()),
+         ],
+         'tile': [
+            Key([mod], "j", lazy.layout.down()),
+            Key([mod], "k", lazy.layout.up()),
+            Key([mod], 'h', lazy.layout.left()),
+            Key([mod], 'l', lazy.layout.right()),
+
+            Key([mod, shift], 'k', lazy.layout.shuffle_up()),
+            Key([mod, shift], 'j', lazy.layout.shuffle_down()),
+
+            Key([mod], 'comma', lazy.layout.decrease_ratio()),
+            Key([mod], 'period', lazy.layout.increase_ratio()),
+            Key([mod, shift], 'comma', lazy.layout.decrease_master()),
+            Key([mod, shift], 'period', lazy.layout.increase_master()),
+         ],
+         'ratiotile': [
+            Key([mod], 'comma', lazy.layout.decrease_ratio()),
+            Key([mod], 'period', lazy.layout.increase_ratio()),
+         ],
          'bsp': [
             Key([mod], "j", lazy.layout.down()),
             Key([mod], "k", lazy.layout.up()),
@@ -169,7 +210,6 @@ def init_layout_specials():
             Key([mod], "k", lazy.layout.up()),
             Key([mod], 'h', lazy.layout.left()),
             Key([mod], 'l', lazy.layout.right()),
-
 
             # shuffle windows
             Key([mod, shift], 'k', lazy.layout.shuffle_up()),
@@ -198,17 +238,26 @@ def init_layout_specials():
 
             Key([mod, shift], 'k', lazy.layout.shuffle_up()),
             Key([mod, shift], 'j', lazy.layout.shuffle_down()),
+            Key([mod, shift], 'h', lazy.layout.swap_left()),
+            Key([mod, shift], 'l', lazy.layout.swap_right()),
 
             # Grow/Shrink windows
+            Key([mod], 'i', lazy.layout.grow_main()),
+            Key([mod, shift], 'i', lazy.layout.shrink_main()),
             Key([mod], 'o', lazy.layout.grow()),
             Key([mod, shift], 'o', lazy.layout.shrink()),
 
-            Key([mod], 'Return', lazy.layout.swap_left()),
-            Key([mod, shift], 'Return', lazy.layout.swap_right()),
+            Key([mod], 'Return', lazy.layout.swap_main()),
+            # Key([mod, shift], 'Return', lazy.layout.swap()),
+            # TODO: I could probably fix this in xmonad.py to swap the current
+            # secondary w/ main or main with 1st secondary in a way similar to
+            # spectwm. -- browse spectrum's code?
+            # > like an "unswap" method. just send main window to secondary.
 
             Key([mod], 'apostrophe', lazy.layout.flip()),
             Key([mod], "m", lazy.layout.maximize()),
-            Key([mod, shift], "n", lazy.layout.normalize()),
+            Key([mod], "n", lazy.layout.normalize()),
+            Key([mod, shift], "n", lazy.layout.reset()),
          ],
         'plasma': [
             # Move windows around in current stack

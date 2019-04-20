@@ -35,10 +35,8 @@ from libqtile import hook
 # from libqtile.config import Match, Rule
 # from libqtile.dgroups import simple_key_binder
 
-from rules import init_floating_layout
-from layouts import init_layouts
+from layouts_groups import init_floating_layout, init_layouts, init_groups
 from keys import init_binds
-from groups import init_groups
 from theming import theme, HOME
 from screens import init_screens
 logging.info('putting this here keeps pyFlakes from bothering me')
@@ -49,14 +47,6 @@ except ImportError:
     pass
 
 PYTHONTRACEMALLOC=1
-
-def rebind_input(qtile):
-    global inputs
-    for key in inputs.keys:
-        qtile.unmap_key(key)
-    inputs.configure()
-    for key in inputs.keys:
-        qtile.map_key(key)
 
 focus_on_window_activation = "smart"
 auto_fullscreen = False
@@ -71,14 +61,13 @@ follow_mouse_focus = True
 bring_front_click = True
 cursor_warp = False
 
-layout_defaults = theme.layouts
 widget_defaults = theme.widgets
 extension_defaults = widget_defaults.copy()
 
 # Fundamental elements
-floating_layout = init_floating_layout(layout_defaults)
+floating_layout = init_floating_layout()
+layouts = init_layouts()
 groups = init_groups()
-layouts = init_layouts(layout_defaults)
 # dgroups_app_rules = init_rules()
 screens = init_screens()
 inputs = init_binds()
@@ -91,12 +80,19 @@ mouse = inputs.mouse
 # groups += init_scratchpad()
 # keys += init_dropdown_keybindings()
 
+def rebind_input(qtile):
+    global inputs
+    for key in inputs.keys:
+        qtile.unmap_key(key)
+    inputs.configure()
+    for key in inputs.keys:
+        qtile.map_key(key)
+
 def main(qtile):
     @hook.subscribe.layout_change
     def ChangeMap(*arg):
         inputs.layout_group = arg
         rebind_input(qtile)
-
 
 # Needed for some Java apps
 # wmname = "LG3D"
