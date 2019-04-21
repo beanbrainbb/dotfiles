@@ -14,6 +14,8 @@ from libqtile.layout.xmonad import MonadTall, MonadWide
 # from libqtile.layout.zoomy import Zoomy
 # from libqtile import layout
 
+from libqtile.config import Match
+
 from theming import theme
 
 l = theme.layouts
@@ -39,6 +41,8 @@ def init_floating_layout():
         {'wname': 'pinentry'},  # GPG key password entry
         {'wmclass': 'ssh-askpass'},  # ssh-askpass
         {'wmclass': 'Xephyr'},  #window manager testing w/ Xephyr
+        {'wmclass': 'Steam'},   #steam was definitely not designed to tile
+        {'wmclass': 'oomox'},
     ], **l)
     
 def init_layouts():
@@ -71,14 +75,17 @@ def init_groups():
                 layouts=[
                     Columns(**l),
                     Stack(**l),
-                    ],
+                ],
                 label='!'),
             Group(">kek",
                 layout='max',
                 layouts=[
                     Max(**l),
-                    MonadWide(**l)
-                    ],
+                    MonadWide(**l),
+                ],
+                matches=[
+                    Match(title='weechat'),
+                ],
                 label="@"),
             Group("H4XX",
                 layout='max',
@@ -86,7 +93,10 @@ def init_groups():
                     Max(**l),
                     Columns(**l),
                     MonadWide(**l),
-                    ],
+                ],
+                matches=[
+                    Match(wm_class='sublime_text'),
+                ],
                 label="#"),
             Group("$RIPTZ",
                 layout='columns',
@@ -116,24 +126,37 @@ def init_groups():
                     MonadTall(**l),
                     MonadWide(**l),
                     ],
+                matches=[
+                    Match(wm_class='qutebrowser'),
+                ],
                 label="𑙩𑙩𑙩𑙩&"),
             Group(':D',
                 layout='columns',
                 layouts=[
                     Columns(**l),
-                    ],
+                ],
                 label='*'),
             Group('/3/',
                 layout='max',
                 layouts=[
                     Max(**l)
                     ],
+                matches=[
+                    Match(wm_class='Blender'),
+                ],
                 label='9'),
             Group('/gd/',
                 layout='max',
                 layouts=[
                     Max(**l)
                     ],
+                matches=[
+                    Match(wm_class=[
+                        'gimp',
+                        'krita',
+                        'mypaint',
+                        ])
+                ],
                 label='0'),
             ScratchPad('scratch', [
                     DropDown('term', TERMUX),

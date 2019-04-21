@@ -44,7 +44,7 @@ class Themer:
             'border_normal': self._theme['color4'],
             'border_normal_fixed': self._theme['color4'],
             'border_normal_stack': self._theme['color4'],
-            'border_width': 8,
+            'border_width': 5,
             'border_width_single': 0,
             'single_border_width': 0,
             'max_border_width': 0,
@@ -53,7 +53,7 @@ class Themer:
             'padding_left': 0,
             'grow_amount': 10,                           #Default: 10
             'lower_right': True,                         #Defaul: True
-            'margin': 25,                                #Default: 0
+            'margin': 10,                                #Default: 0
             'ratio': 0.6,                                #Default: 1.6
             'insert_position': 0,                        #Default: 0
             }
@@ -117,5 +117,8 @@ theme_list = {
     'yousai': Themer(Q_THEMES + 'yousai.txt'),
     'space_amoled01': Themer(Q_THEMES + 'space_amoled01.txt'),
     'grayscale_light01': Themer(Q_THEMES + 'grayscale_light01.txt'),
+    'blue_megacity01': Themer(Q_THEMES + 'blue_megacity01.txt'),
+    'tempus_summer_lcars_orange_pipes01': Themer(Q_THEMES \
+        + 'tempus_summer_lcars_orange_pipes01.txt'),
 }
 theme = theme_list['base32_grayscale01']

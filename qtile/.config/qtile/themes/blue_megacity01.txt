@@ -1,0 +1,20 @@
+*background:  #222129
+*foreground:  #b4b6b5
+*color0:  #0f0f11
+*color1:  #bf7858
+*color2:  #476b8f
+*color3:  #989a2f
+*color4:  #4c658d
+*color5:  #90a0c1
+*color6:  #46adc0
+*color7:  #4b5063
+*color8:  #0f0f11
+*color9:  #dc3e25
+*color10:  #989a2f
+*color11:  #dc3e25
+*color12:  #46adc0
+*color13:  #90a0c1
+*color14:  #46adc0
+*color15:  #c9c7ca
+
+*.font: 		-misc-saucecodepro nerd font mono-*-*-*--0-0-0-0-p-0-*-0

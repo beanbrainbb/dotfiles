@@ -74,6 +74,7 @@ def init_const_keys():
         Key([mod, shift], "q", lazy.restart()),
         Key([mod, ctrl], "q", lazy.shutdown()),
         Key([mod, shift], "semicolon", lazy.spawncmd()),
+        Key([mod], "p", lazy.spawn('rofi -show drun')),
 
         # Scrotter
         Key([mod, shift], 'a', lazy.spawn([
@@ -193,10 +194,10 @@ def init_layout_specials():
             Key([mod], 'h', lazy.layout.left()),
             Key([mod], 'l', lazy.layout.right()),
 
-            # resize windows, also in bsp
-            Key([mod], "o", lazy.layout.grow_down()),
             Key([mod, shift], "o", lazy.layout.grow_up()),
+            Key([mod], "o", lazy.layout.grow_down()),
             Key([mod, shift], "i", lazy.layout.grow_left()),
+            Key([mod], "i", lazy.layout.grow_right()),
 
             Key([mod], "i", lazy.layout.grow_right()),
             Key([mod, "mod1"], "j", lazy.layout.flip_down()),
@@ -218,8 +219,8 @@ def init_layout_specials():
             Key([mod, shift], 'l', lazy.layout.shuffle_right()),
 
             # resize windows, also in bsp
-            Key([mod], "o", lazy.layout.grow_down()),
             Key([mod, shift], "o", lazy.layout.grow_up()),
+            Key([mod], "o", lazy.layout.grow_down()),
             Key([mod, shift], "i", lazy.layout.grow_left()),
             Key([mod], "i", lazy.layout.grow_right()),
 
