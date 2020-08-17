@@ -1,4 +1,5 @@
 #!/bin/bash
+# TODO: enable editing of serverargs
 #
 # Example config file for cdm(1).
 # Values set here is the default as in cdm(1).
@@ -19,7 +20,7 @@
 binlist=(
 	'startx ~/.xinitrc i3'
 	'startx ~/.xinitrc openbox'
-	'startx ~/.xinitrc spectrwm -- --mode 1020x1080i'
+	'startx ~/.xinitrc spectrwm'
 	'byobu'
 	'/usr/bin/cdm ~/.leave.cdmrc'
 )

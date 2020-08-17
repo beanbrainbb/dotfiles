@@ -17,7 +17,7 @@
 !
 ! Input Mono !
 #define font Input Mono
-#define fontsize size=9
+#define fontsize size=10
 #define fontas antialias=false
 !
 ! ! PT !
@@ -45,12 +45,12 @@ XTerm.ttyModes: erase ^?
 !XTerm*buffered:true
 
 !# Borders, SCroll
-XTerm*internalBorder:35
-XTerm*externalBorder:80
+XTerm*internalBorder:15
+XTerm*externalBorder:15
 XTerm*cursorBlink:true
 XTerm*cursorOffTime:512
 XTerm*cursorOnTime:512
-XTerm*borderless:true
+XTerm*borderless:false
 XTerm*skipScroll:true
 XTerm*scrollTty*:false
 XTerm*intensityStyles:true
@@ -58,7 +58,7 @@ XTerm*title:$0:$$
 XTerm*lineSpace:0
 XTerm*letterSpace:0
 XTerm*form.Thickness:0
-XTerm*borderWidth:10
+XTerm*borderWidth:4
 XTerm*scaleHeight:1.0
 XTerm*vt100*colorMode:on
 XTerm*vt100*boldColors:on

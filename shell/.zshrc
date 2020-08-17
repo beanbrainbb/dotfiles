@@ -37,6 +37,13 @@ bindkey -v
 # autoload -Uz zsh-newuser-install; zsh-newuser-install
 # to re-run zsh-newuser-install
 
+###########
+# SCRIPTS #
+###########
+
+# Z - Jump Around (community/z)
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
 ############
 # ALIASING #
 ############

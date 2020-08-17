@@ -2,34 +2,21 @@
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
+userkeymap=$HOME/.Xkeymap
 userprofile=$HOME/.xprofile
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-$sysprofile=/etc/xprofile
+sysprofile=/etc/xprofile
 
 # merge in defaults and keymaps
 
-if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
-
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
-# Load xprofile
-
-if [ -f $userprofile ]; then
+[ -f "$userresources" ] && xrdb -merge "$userresources"
+[ -f "$usermodmap" ] && xmodmap "$usermodmap"
+[ -f "$userkeymap" ] && test -f "$userkeymap" && xkbcomp "$userkeymap" $DISPLAY
+[ -f "$userprofile" ] && . "$userprofile"
+[ -f $sysresources ] && xrdb -merge $sysresources
+[ -f $sysmodmap ] && xmodmap $sysmodmap
 [ -f $sysprofile ] && . $sysprofile
-[ -f $userprofile ] && . $userprofile
 
 session=${1:-spectrwm}
 

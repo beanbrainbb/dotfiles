@@ -1,6 +1,7 @@
-test -f ~/.Xkeymap && xkbcomp ~/.Xkeymap $DISPLAY
-xmodmap ~/.Xmodmap
-xrdb -merge ~/.Xresources
+# TODO: CLEANUP THIS CRAP
+
+# set resolution
+xrandr --fb 1920x1080
 # Disable DPMS turning off the screen
 xset -dpms
 xset s off
@@ -9,7 +10,7 @@ xset s off
 xset -b
 
 # Enable zapping (C-A-<Bksp> kills X)
-setxkbmap --option terminate:ctrl_alt_bksp
+# setxkbmap -option terminate:ctrl_alt_bksp
 
 # Enforce correct locales from the beginning:
 # LC_ALL is unset since it overwrites everything
@@ -37,6 +38,6 @@ xsetroot -solid "#333333"
 #echo /usr/bin/i3 -V -d all >> ~/.i3/logfile
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
-run picom --backend glx --glx-no-rebind-pixmap --glx-no-stencil -m 0.9 -f -b --shadow-ignore-shaped -C --unredir-if-possible -o 0.0
-run xflux -z 87521 -k 2000
+picom --backend glx --glx-no-stencil -b
+[ -n "$(pgrep xflux)" ] && xflux -z 87521 -k 2000
 wal -i ".dotfiles/pape"
