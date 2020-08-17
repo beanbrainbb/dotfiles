@@ -1,0 +1,51 @@
+{'type': 'v', 'text': '$sysprofile'}
+{'type': 'v', 'text': ' --drive-shared-with-me'}
+{'type': 'V', 'text': 'typedef struct litem {	unsigned id;	struct litem *left, *right;	enum {SMALL, BIG, UPPER, LOWER} type;	union {		int d;		char c[7];	} val;} Litem;'}
+{'type': 'V', 'text': 'Litem *litem_insert(litem *next){	Litem *new_item = mall}'}
+{'type': 'V', 'text': 'create_array(int *array, int len);'}
+{'type': 'V', 'text': 'create_array(int length);'}
+{'type': 'V', 'text': 'int *create_array(int length, int value);'}
+{'type': 'V', 'text': 'Funk Effect - Devil Dance (Locuzzed Remix)'}
+{'type': 'V', 'text': '	DEBUG_P(%d, size);'}
+{'type': 'V', 'text': '		DEBUG_P(char *, p);		DEBUG_P(int, ary1->size)'}
+{'type': 'V', 'text': '		*p = val++;'}
+{'type': 'V', 'text': '	arb_ary.ary = '}
+{'type': 'V', 'text': 'void *my_malloc(int nbytes);'}
+{'type': 'V', 'text': '	Bool in_x (rect.up_left.x <= p && p <= rect.bot_right.x)'}
+{'type': 'v', 'text': 'FALSE'}
+{'type': 'v', 'text': 'TRUE'}
+{'type': 'V', 'text': '	center.x = (rect.bot_right.x - rect.up_left.x) / 2;'}
+{'type': 'V', 'text': '	int x = rect.bot_right.x - rect.up_left.x;'}
+{'type': 'V', 'text': '	x = rect.bot_right.x - rect.up_left.x;'}
+{'type': 'v', 'text': '.red = 255,'}
+{'type': 'V', 'text': '	[BLACK]		=	{0},'}
+{'type': 'V', 'text': '	struct cmplx {		double real, i;	};'}
+{'type': 'V', 'text': 'struct complexadd_complex_struct(const (struct complex) o1, const (struct complex) o2){	struct complex r;	r.real = o1.real + o2.real;	r.i = o1.i + o2.i;	return r;}'}
+{'type': 'V', 'text': '#include <stdio.h>intmain(void){	struct complex {		double real, i;	};	struct complex c1, c2, c3;	return 0;}'}
+{'type': 'V', 'text': 'struct complexadd_complex_struct(const (struct complex) o1, const (struct complex) o2){	struct complex r;	r.real = o1.real + o2.real;	r.i = o1.i + o2.i;	return r;}'}
+{'type': 'v', 'text': 'struct complex *o1'}
+{'type': 'V', 'text': '	a.x = 0; a.y = 1;'}
+{'type': 'V', 'text': '	struct {x,y} a;'}
+{'type': 'v', 'text': ', extra_spc'}
+{'type': 'V', 'text': '# source $BYOBU_PREFIX/share/byobu/keybindings/common'}
+{'type': 'v', 'text': 'r/tmp'}
+{'type': 'V', 'text': 'set viminfo'}
+{'type': 'v', 'text': '*-r-*-*-10-*-*-*-*-*-*-*'}
+{'type': 'V', 'text': '  838 89 9 9 9 9'}
+{'type': 'V', 'text': 'jkljkljkl'}
+{'type': 'V', 'text': 'jkljkljkjklkl'}
+{'type': 'V', 'text': '	PRINT_DEBUG(i);'}
+{'type': 'V', 'text': '	printf("DEBUG DEFINED:\n");'}
+{'type': 'V', 'text': '	mkdir -p debug'}
+{'type': 'v', 'text': '-D DEBUG '}
+{'type': 'V', 'text': 'justify: justify.o line.o word.o	gcc -o justify justify.o line.o word.ojustify.o: justify.c line.h word.h	gcc -c justify.cline.o: line.c line.h	gcc -c line.cword.o:word.c word.h	gcc -c word.c'}
+{'type': 'v', 'text': ' word.h'}
+{'type': 'V', 'text': 'void debug_prints(const char *name, const char *str);'}
+{'type': 'v', 'text': 'LINE_H'}
+{'type': 'V', 'text': '/************************************************************************'}
+{'type': 'v', 'text': 'WORD_H'}
+{'type': 'V', 'text': '#include <stdio.h>#include <string.h>'}
+{'type': 'v', 'text': 'const char *str'}
+{'type': 'V', 'text': '#if DEBUG#include "test.h"#endif /* DEBUG */'}
+{'type': 'V', 'text': '#define DEBUG 1'}
+{'type': 'V', 'text': '#endif /* DEBUG */'}

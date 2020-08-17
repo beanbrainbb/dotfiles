@@ -1,0 +1,14 @@
+#!/bin/bash
+binlist=(
+	'poweroff'
+	'reboot'
+	'systemctl suspend'
+	'systemctl hibernate'
+	'systemctl hybrid-sleep'
+	'/bin/zsh'
+	'/usr/bin/cdm ~/.cdmrc'
+)
+
+namelist=('Shut Down' Reboot Suspend Hibernate 'Hybrid-Sleep' 'Drop to Shell' Back)
+flaglist=(C C C C C C C)
+dialogrc=/usr/share/doc/cdm/themes/default
