@@ -1,0 +1,23 @@
+# man zshcontrib § PROMPT THEMES
+# man zshparam
+# man zshmisc § EXPANSION OF PROMPT SEQUENCES
+# man zshzle
+
+function zle-keymap-select {
+  # update keymap variable for the prompt
+  case "$KEYMAP" in
+  	"vicmd")		MODE="vicmd";;
+  	"viins")		MODE="viins";;
+	*)			MODE="other";;
+  esac
+  mode-info
+  zle reset-prompt
+  zle -R $KEYMAP
+}
+zle -N zle-keymap-select
+
+function mode-info {
+	echo $MODE
+}
+
+PS1="mode: <"$MODE"> "

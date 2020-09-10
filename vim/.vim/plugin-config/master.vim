@@ -3,7 +3,7 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	autocmd VimEnter * PlugInstall --sync | source glob('~/.vimrc')
 endif
 " Specify a directory for plugins
 " Note that this line must be present for Vim-Plug commands to work:
@@ -40,6 +40,7 @@ runtime! plugins/gitstatus.vim
 " Necessary for easyclip
 " Make gm mark instead of m
 nnoremap gm m
+let g:EasyClipUseSubstituteDefaults = 1
 
 " Let concurrent vim instances share yank history "
 let g:EasyClipShareYanks=1

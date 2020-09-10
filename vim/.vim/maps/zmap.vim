@@ -11,18 +11,59 @@
 
 let mapleader = ";"
 
-" completion bindings
-inoremap <silent> <Leader>f <C-x><C-f>
-inoremap <silent> <Leader>i <C-x><C-i>
+" ins-completion
+"
+" whole lines
 inoremap <silent> <Leader>l <C-x><C-l>
+"
+" keyw in current file
 inoremap <silent> <Leader>n <C-x><C-n>
-inoremap <silent> <Leader>o <C-x><C-o>
+"
+" keyw in 'dictionary' (h: dictionary)
+inoremap <silent> <Leader>t <C-x><C-k>
+"
+" keyw in 'thesaurus' (h: thesaurus)
+inoremap <silent> <Leader>t <C-x><C-t>
+"
+" keyw in current and included files
+inoremap <silent> <Leader>i <C-x><C-i>
+"
+" tags
 inoremap <silent> <Leader>t <C-x><C-]>
+"
+" file names
+inoremap <silent> <Leader>f <C-x><C-f>
+"
+" definitions or macros
+inoremap <silent> <Leader>t <C-x><C-d>
+"
+" vim cli
+inoremap <silent> <Leader>t <C-x><C-v>
+"
+" user defined
 inoremap <silent> <Leader>u <C-x><C-u>
+"
+" omni
+inoremap <silent> <Leader>o <C-x><C-o>
+"
+" spelling suggestions
+inoremap <silent> <Leader>o <C-x>s
+"
+" keyw in 'complete'
+inoremap <silent> <Leader>o <C-x><C-p>
 
 """"""""""""""""""""""""
 " convenience bindings "
 """"""""""""""""""""""""
+
+noremap j gj
+noremap k gk
+noremap <Space>k k
+noremap <Space>j j
+
+nnoremap <Leader>w <C-w>
+
+nnoremap Y y$
 
 " From https://vimways.org/2019/vim-and-the-working-directory/ "
 " 'cd' towards the directory in which the current file is edited

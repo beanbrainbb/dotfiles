@@ -12,9 +12,9 @@
 " Initializations "
 """""""""""""""""""
 " Because I don't plan on making this rc portable to vi and other clones
-set viminfo=!,%,'100,<50,r/tmp,s10,h
 set nocompatible
 filetype plugin indent on
+set viminfo=!,%,'100,<50,r/tmp,s10,h
 
 " Load Plugins "
 runtime! plugin-config/master.vim
@@ -28,12 +28,14 @@ runtime! disp/pretty.vim
 " Usability "
 """""""""""""
 runtime maps/*map.vim
+runtime misc/abbr.vim
 
 " `matchit.vim` is built-in so let's enable it!
 " Hit `%` on `if` to jump to `else`.
 runtime macros/matchit.vim
 
 " various settings
+set nrformats=bin,octal,hex,alpha
 set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 				" Doesn't seem to work (at least as I expect
 				" it to)

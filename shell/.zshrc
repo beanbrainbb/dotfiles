@@ -37,6 +37,30 @@ bindkey -v
 # autoload -Uz zsh-newuser-install; zsh-newuser-install
 # to re-run zsh-newuser-install
 
+##############
+# OH-MY-ZSH! #
+##############
+
+plugins=()
+
+##########
+# PROMPT #
+##########
+
+fpath=(~/.zsh/theme ~/.zsh/theme/pure $fpath)
+autoload -Uz promptinit
+promptinit
+
+export PROMPT_SUBST=1
+export KEYTIMEOUT=1
+prompt pure
+# prompt vi_test
+# prompt sleepy
+# prompt bart
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
 ###########
 # SCRIPTS #
 ###########
@@ -65,3 +89,5 @@ alias sfind='sudo find'
 alias sgrep='sudo grep'
 alias sless='sudo less'
 alias svim='sudo -E vim'
+
+alias jackctl='jack_control'

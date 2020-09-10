@@ -43,7 +43,6 @@ flaglist=(C X X C C)
 # Default to unset, causing dialog(1) to use the system wide default.
 # See /usr/share/doc/cdm/themes for some nice choices.
 #dialogrc=/home/$USER/.cdm/themes/miromiro
-#dialogrc=/usr/share/doc/cdm/themes/blackandwhite
 dialogrc=/usr/share/doc/cdm/themes/blackandwhite
 
 # Index of the first item in the menu.

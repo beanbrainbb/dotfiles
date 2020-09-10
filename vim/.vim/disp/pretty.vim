@@ -1,6 +1,8 @@
 " We like our wals
 colorscheme wal
 
+set linebreak
+
 " disabling the ear-screeching beep
 set vb t_vb=
 
@@ -27,26 +29,29 @@ endfunction
 
 ":so $VIMRUNTIME/syntax/hitest.vim
 
+set cursorline
+set cursorlineopt=screenline,number
+
 set laststatus=2
 set statusline=
 "	File Info	"
-set statusline+=%#Difftext#
-set statusline+=[%-n]\ 					"buffer number
+set statusline+=%#StatusLine#
+set statusline+=[%-n]					"buffer number
 set statusline+=%#Directory#
 set statusline+=%{SLDir()}				"path
 set statusline+=%#ModeMsg#
 set statusline+=%{SLFile()}				"file
-set statusline+=%#MoreMsg#
+set statusline+=%#DiffText#
 set statusline+=%m%r%h%w%y				"flags
-set statusline+=%#line# |
+set statusline+=%#line#
 "	caret info "
 set statusline+=%=						"right justified
-set statusline+=%#SpellLocal#
+set statusline+=%#Visual#
 set statusline+=0x%B\ %b				"character values
-set statusline+=%#Difftext#
-set statusline+=\ [%c%V]				"columns
-set statusline+=_%l/%L					"lines
-set statusline+=\ (%P%%)				"percentage
+set statusline+=%#StatusLine#
+set statusline+=\ %l/%L					"lines
+set statusline+=x[%c%V]				"columns
+set statusline+=\ (%P)				"percentage
 
 " Default status line / Lots of example strings
 " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]

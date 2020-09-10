@@ -7,63 +7,79 @@
 ! #define font FuraMono Nerd Font Mono
 ! #define font InconsolataGo Nerd Font Mono
 ! #define font Inconsolata Nerd Font Mono
+!
+! ! Latin Modern Mono
 ! #define font Latin Modern Mono
+! #define fontsize size=10
+! #define fontas antialias=true
 !
 ! ! BitstreamVera
 ! #define font BitstreamVeraSansMono Nerd Font Mono
+! #define fontsize size=12
+! #define fontas antialias=true
+!
+! ! DejaVu Sans Mono
+! #define font -*-dejavu sans mono-medium-r-*-*-*-*-*-*-*-*-*-*
+! #define fontsize size=10
+! #define fontas antialias=true
 !
 ! ! Monoid
 ! #define font Monoid Nerd Font Mono
 !
+! ! Fira
+! #define font fira code-medium
+! #define fontsize size=10
+! #define fontas antialias=true
+!
 ! Input Mono !
-#define font Input Mono
+#define font Input:style=Regular
 #define fontsize size=10
-#define fontas antialias=false
+#define fontas antialias=true
 !
 ! ! PT !
-! #define font PT Mono
+! #define font "PT Mono"
 ! #define fontsize size=10
 ! #define fontas antialias=true
 
 !!! C O N F I G !!!
 ! ~/.xres/xterm
 ! # Fonts
-XTerm*vt100.renderFont: true
-XTerm*vt100.faceName: font:fontsize:fontas
-XTerm*vt100.font: 7x13
+*.vt100.renderFont: true
+*.vt100.faceName: font:fontsize:fontas
+! *.vt100.font: 7x13
 
 ! # Behave
-XTerm*termName: xterm-256color
+*.termName: xterm-256color
 Xterm*vt100.saveLines: 1
-XTerm*vt100.scrollBar: false
-XTerm*utf8:2
-XTerm*ptyInitialErase:true
+*.scrollBar: false
+*.utf8:2
+*.ptyInitialErase:true
 
 ! Fix misfunctioning backspc in Arch Linux
-XTerm.vt100.backarrowKey: false
-XTerm.ttyModes: erase ^?
-!XTerm*buffered:true
+*..vt100.backarrowKey: false
+*..ttyModes: erase ^?
+!*.buffered:true
 
 !# Borders, SCroll
-XTerm*internalBorder:15
-XTerm*externalBorder:15
-XTerm*cursorBlink:true
-XTerm*cursorOffTime:512
-XTerm*cursorOnTime:512
-XTerm*borderless:false
-XTerm*skipScroll:true
-XTerm*scrollTty*:false
-XTerm*intensityStyles:true
-XTerm*title:$0:$$
-XTerm*lineSpace:0
-XTerm*letterSpace:0
-XTerm*form.Thickness:0
-XTerm*borderWidth:4
-XTerm*scaleHeight:1.0
-XTerm*vt100*colorMode:on
-XTerm*vt100*boldColors:on
-XTerm*vt100*dynamicColors:on
-XTerm*vt100*underLine:on
+*.internalBorder:15
+*.externalBorder:15
+*.cursorBlink:true
+*.cursorOffTime:512
+*.cursorOnTime:512
+*.borderless:false
+*.skipScroll:true
+*.scrollTty*:false
+*.intensityStyles:true
+*.title:$0:$$
+*.lineSpace:0
+*.letterSpace:0
+*.form.Thickness:0
+*.borderWidth:4
+*.scaleHeight:1.0
+*.vt100*colorMode:on
+*.vt100*boldColors:on
+*.vt100*dynamicColors:on
+*.vt100*underLine:on
 
 ! ! Scheming
 ! !special
